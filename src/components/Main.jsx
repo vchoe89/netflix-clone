@@ -12,6 +12,7 @@ const Main = () => {
   useEffect(() => {
     axios.get(requests.requestPopular).then((res) => {
       setMovies(res.data.results);
+      console.log(res.data.results);
     });
   }, []);
 
@@ -24,7 +25,7 @@ const Main = () => {
   };
 
   return (
-    <div className="w-full h-[550px] text-white">
+    <div className="w-full h-[550px]  text-white">
       <div className="w-full h-full">
         <div className="absolute w-full h-[550px] bg-gradient-to-r from-black"></div>
 
@@ -33,9 +34,9 @@ const Main = () => {
           src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
           alt={movie?.title}
         />
-        <div className="absolute w-full top-[20%] py-4 md:p-8">
+        <div className="absolute w-full top-[20%] p-4 md:p-8">
           <p className="text-4xl mb-4 text-red-600 ">Featured Film</p>
-          <h1 className="text-xl md:text-5xl font-bold">{movie?.title}</h1>
+          <h1 className="text-xl md:text-5xl  font-bold">{movie?.title}</h1>
           <div className="my-4">
             <button className="border bg-gray-300 text-black border-gray-300 py-2 px-5">
               Play
